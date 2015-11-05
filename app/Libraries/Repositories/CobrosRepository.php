@@ -89,7 +89,7 @@ class CobrosRepository
 
 		$cobrosToday = Contratos::where('periodo_cobro', '=', 'diario')
 		->select('id', 'monto','no_cuotas', 'valor_cuota', 'periodo_cobro', 
-		'nombres', 'apellidos', 'telefonos', 'conyugue_nombre', 'conyugue_lugar_trabajo')
+		'nombres', 'apellidos','domicilio', 'telefonos', 'conyugue_nombre', 'conyugue_lugar_trabajo')
 		->get();
 		//dd($cobrosToday);
 

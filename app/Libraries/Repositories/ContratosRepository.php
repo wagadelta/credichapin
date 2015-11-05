@@ -79,4 +79,6 @@ class ContratosRepository
 
 		return $contratos;
 	}
+	
+
 }

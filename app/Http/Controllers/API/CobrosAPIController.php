@@ -33,11 +33,11 @@ class CobrosAPIController extends AppBaseController
 	  $input = $request->all();
 
 		//$result = $this->cobrosRepository->search($input);
-		$cobros = $this->cobrosRepository->cobrosToday();
+		$result = $this->cobrosRepository->cobrosToday;
 
-	  	//$cobros = $result[0];
+	  	$cobros = $result[0];
 
-		return Response::json(ResponseManager::makeResult($cobros, "Cobros retrieved successfully."));
+		return Response::json(ResponseManager::makeResult($cobros->toArray(), "Cobros retrieved successfully."));
 	}
 
 	public function search($input)

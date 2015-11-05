@@ -15,7 +15,7 @@ class Contratos extends Model
 	    "monto",
 		"no_cuotas",
 		"valor_cuota",
-		"perido_cobro",
+		"periodo_cobro",
 		"solicitado_por",
 		"solicitado_en",
 		"aprobado_por",
@@ -48,8 +48,7 @@ class Contratos extends Model
 	public static $rules = [
 	    "monto" => "required",
 		"no_cuotas" => "required",
-		"valor_cuota" => "required",
-		"perido_cobro" => "required"
+		"periodo_cobro" => "required"
 	];
 
 }
