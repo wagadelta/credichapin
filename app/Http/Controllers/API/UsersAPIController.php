@@ -94,7 +94,7 @@ class UsersAPIController extends AppBaseController
 		$contratos = \DB::table('contratos')
 		->where('solicitado_por', '=', $id)
 		->where('periodo_cobro','=','diario')
-		->select('id', 'valor_cuota', 'periodo_cobro', 'nombres', 'apellidos', 'domicilio', 'telefonos')
+		->select('id', 'valor_cuota', 'monto', 'no_cuotas', 'periodo_cobro', 'nombres', 'apellidos', 'domicilio', 'telefonos')
 		->orderBy('apellidos', 'asc')
 		->get();
 
