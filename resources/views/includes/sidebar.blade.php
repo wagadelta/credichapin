@@ -43,12 +43,31 @@
                     <span>Admin. Personas</span>
                 </a>
             </li>
-             <li>
-                <a href="/contratos">
-                    <i class="fa fa-files-o"></i>
-                    <span>Admin. Contratos</span>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-files-o"></i> <span>Contratos</span> </i>
                 </a>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/solicitado"><i class="fa fa-files-o"></i><span>Solicitados</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/aprobado"><i class="fa fa-files-o"></i><span>Aprobados - Por Entregar</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/rechazado"><i class="fa fa-files-o"></i><span>Rechazados</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/entregado"><i class="fa fa-files-o"></i><span>Entregados - En Cobro</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/pagado"><i class="fa fa-files-o"></i><span>Pagados</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/contratos/estado/juridico"><i class="fa fa-files-o"></i><span>Jurídicos</span></a></li>
+                </ul>
+                
             </li>
+            
             <li>
                 <a href="/cobros">
                     <i class="fa fa-money"></i>

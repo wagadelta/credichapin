@@ -58,6 +58,7 @@ Route::get('personas/{id}/delete', [
     'uses' => 'PersonasController@destroy',
 ]);
 
+Route::get('contratos/estado/{estado}', 'ContratosController@estado');
 
 Route::resource('api/contratos', 'API\ContratosAPIController');
 

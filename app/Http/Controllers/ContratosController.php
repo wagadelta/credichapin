@@ -159,4 +159,15 @@ class ContratosController extends AppBaseController
 		return redirect(route('contratos.index'));
 	}
 
+	public function estado($estado, Request $request)
+	{
+
+		$contratos= \DB::table('contratos')->where('estado','=', $estado)->paginate(25);
+		$contratos->setPath($request->url());
+		return view('contratos.index')
+		    ->with('contratos', $contratos)
+		    ->with('estado', $estado);
+	}
+	
+	
 }
