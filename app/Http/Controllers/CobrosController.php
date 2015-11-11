@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Libraries\Repositories\CobrosRepository;
 use Mitul\Controller\AppBaseController;
 use Response;
+use Carbon\Carbon;
 use Flash;
 
 class CobrosController extends AppBaseController
@@ -47,7 +48,7 @@ class CobrosController extends AppBaseController
 	 * Show the form for creating a new Cobros.
 	 *
 	 * @return Response
-	 */
+	 **/ 
 	public function create()
 	{
 		return view('cobros.create');
@@ -157,6 +158,15 @@ class CobrosController extends AppBaseController
 		Flash::message('Cobros deleted successfully.');
 
 		return redirect(route('cobros.index'));
+	}
+	
+	public function fecha_pago($fecha = null, Request $request){
+		
+		$cobros = $this->cobrosRepository->findCobrosByFechaCobro($fecha);
+		//$cobros->setPath($request->url());
+		return view('cobros.indexByDate')
+		    ->with('cobros', $cobros)
+		    ->with('fecha',$fecha);
 	}
 
 }

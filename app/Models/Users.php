@@ -67,4 +67,8 @@ class Users extends Model
 	public function contratos(){
 		return $this->hasMany('App\Models\Contratos');
 	}
+	
+	public function cobros(){
+		return $this->hasMany('App\Models\Cobros');
+	}
 }

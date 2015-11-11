@@ -62,5 +62,9 @@ class Contratos extends Model
 	public function user(){
 		return $this->belongsTo('App\Models\Users', 'solicitado_por');
 	}
+	
+	public function cobros(){
+		return $this->hasMany('App\Models\Cobros', 'id_contrato');
+	}
 
 }

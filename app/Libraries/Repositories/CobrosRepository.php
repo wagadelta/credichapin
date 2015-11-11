@@ -5,6 +5,7 @@ namespace App\Libraries\Repositories;
 
 use App\Models\Cobros;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class CobrosRepository
 {
@@ -78,5 +79,13 @@ class CobrosRepository
 		$cobros->save();
 
 		return $cobros;
+	}
+	
+	public function findCobrosByFechaCobro($fecha = null){
+		$query = Cobros::query();
+		$fecha = (is_null($fecha))?Carbon::today()->toDateString() : Carbon::createFromFormat('Y-m-d',$fecha)->toDateString();
+		$query->whereDate('fecha_pago', '=', $fecha);
+		//dd($query->get());
+		return $query->get();
 	}
 }

@@ -49,12 +49,7 @@ public function run()
           'conyugue_lugar_trabajo' => $faker->address ,
           'conyugue_telefono' => $faker->phoneNumber ,
           // DATOS DE PERSONA
-          'estado' => $faker->randomElement($array = array (
-            'solicitado',
-            'entregado',
-            'aprobado',
-            'rechazado',
-            'juridico'))
+          'estado' => $faker->randomElement($array = array('solicitado', 'aprobado', 'rechazado', 'entregado', 'pagado', 'juridico' ))
       ];
       DB::table('contratos')->insert($contrato);
     } //foreach

@@ -30,5 +30,14 @@ class Cobros extends Model
 		"no_recibo"=> "required_without_all:no_aviso",
 		"no_aviso"=> "required_without_all:no_recibo"
 	];
+	
+	// public function getDates()
+	// {
+	//     return ['created_at'];
+	// }
+	
+	public function contrato(){
+		return $this->belongsTo('App\Models\Contratos');
+	}
 
 }
