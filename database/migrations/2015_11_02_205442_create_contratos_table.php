@@ -48,7 +48,7 @@ class CreateContratosTable extends Migration
 			$table->string('conyugue_lugar_trabajo');
 			$table->string('conyugue_telefono');
 			// DATOS DE PERSONA
-			$table->string('estado');
+			$table->enum('estado', array('aprobado', 'entregado', 'juridico', 'rechazado', 'solicitado'));
 			$table->timestamps();
 		});
 	}
