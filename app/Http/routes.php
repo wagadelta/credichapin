@@ -50,6 +50,7 @@ Route::get('personas/{id}/delete', [
 ]);
 
 Route::get('contratos/estado/{estado}', 'ContratosController@estado');
+Route::get('api/contratos/estado/{estado}', 'API\ContratosAPIController@estado');
 Route::resource('api/contratos', 'API\ContratosAPIController');
 Route::resource('contratos', 'ContratosController');
 Route::get('contratos/{id}/delete', [

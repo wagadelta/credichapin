@@ -153,4 +153,15 @@ class ContratosAPIController extends AppBaseController
 
 		return Response::json(ResponseManager::makeResult($id, "Contratos deleted successfully."));
 	}
+	
+	public function estado($estado, Request $request)
+	{
+
+		//$contratos= \DB::table('contratos')->where('estado','=', $estado);
+		$query = Contratos::query();
+		$query->where('estado', '=', $estado);
+		$contratos = $query->get();
+		return Response::json(ResponseManager::makeResult($contratos->toArray(), "Contratos updated successfully."));
+	}
+	
 }
