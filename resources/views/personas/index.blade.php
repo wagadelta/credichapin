@@ -31,6 +31,7 @@
                     <th>Conyugue Nombre</th>
                     <th>Conyugue Lugar Trabajo</th>
                     <th>Conyugue Telefono</th>
+                    <th>Id. Contrato</th>
                     <th>Estado</th>
                     <th width="50px">Action</th>
                     </thead>
@@ -50,6 +51,7 @@
                             <td>{!! $persona->conyugue_nombre !!}</td>
                             <td>{!! $persona->conyugue_lugar_trabajo !!}</td>
                             <td>{!! $persona->conyugue_telefono !!}</td>
+                            <td>{!! $persona->id_contrato !!}</td>
                             <td>{!! $persona->estado !!}</td>
                             <td>
                                 <a href="{!! route('personas.edit', [$persona->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>

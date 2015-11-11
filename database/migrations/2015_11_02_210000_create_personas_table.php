@@ -28,6 +28,8 @@ class CreatePersonasTable extends Migration
 			$table->string('conyugue_nombre');
 			$table->string('conyugue_lugar_trabajo');
 			$table->string('conyugue_telefono');
+			$table->integer('id_contrato')->unsigned();
+			$table->foreign('id_contrato')->references('id')->on('contratos')->onDelete('cascade');
 			$table->string('estado');
 			$table->timestamps();
 		});

@@ -26,6 +26,7 @@ public function run()
           'conyugue_nombre' =>  $faker->firstNameFemale.' '. $faker->lastName,
           'conyugue_lugar_trabajo' => $faker->address ,
           'conyugue_telefono' => $faker->phoneNumber ,
+          'id_contrato' =>    $faker->numberBetween($min = 1, $max = 500)  ,
           'estado' => $faker->randomElement($array = array ('activo','cancelado','suspendido'))
         ]);
     } //foreach

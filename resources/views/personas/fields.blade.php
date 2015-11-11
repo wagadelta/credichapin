@@ -76,6 +76,12 @@
     {!! Form::text('estado', null, ['class' => 'form-control']) !!}
 </div>
 
+<!--- id_contrato Field --->
+<div class="form-group col-sm-6 col-lg-4">
+    {!! Form::label('id_contrato', 'Id Contrato:') !!}
+    {!! Form::text('id_contrato', null, ['class' => 'form-control']) !!}
+</div>
+
 
 <!--- Submit Field --->
 <div class="form-group col-sm-12">

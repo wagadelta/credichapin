@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UsersTableSeeder');
 		$this->command->info('User table seeded!');
 
-		$this->call('PersonasTableSeeder');
-		$this->command->info('User table seeded!');
-
 		$this->call('ContratosTableSeeder');
 		$this->command->info('Contratos table seeded!');
+		
+		$this->call('PersonasTableSeeder');
+		$this->command->info('User table seeded!');
 
 		$this->call('CobrosTableSeeder');
 		$this->command->info('Cobros table seeded!');

@@ -24,6 +24,7 @@ class Personas extends Model
 		"conyugue_nombre",
 		"conyugue_lugar_trabajo",
 		"conyugue_telefono",
+		"id_contrato",
 		"estado"
 	];
 
@@ -32,7 +33,11 @@ class Personas extends Model
 	    "apellidos" => "required",
 		"identificacion" => "required",
 		"otra_identificacion" => "required",
-		"fecha_nacimiento" => "required"
+		"fecha_nacimiento" => "required",
+		"id_contrato" => "required"
 	];
 
+	public function contrato(){
+		return $this->belongsTo('\App\Model\Contratos');
+	}
 }
