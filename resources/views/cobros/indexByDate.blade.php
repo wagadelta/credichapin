@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-
+<?php //dd($cobros->contrato());?>
     <div class="container">
 
         @include('flash::message')
@@ -12,19 +12,19 @@
         </div>
 
         <div class="row">
-            @if($cobros->isEmpty())
+            @if (count($cobros) )
                 <div class="well text-center">No Cobros found.</div>
             @else
                 <table class="table">
                     <thead>
                     <th>Id Contrato</th>
-			<th>Id Usuario</th>
-			<th>Fecha Pago</th>
-			<th>Cuotas A Pagar</th>
-			<th>Cuotas Pagadas</th>
-			<th>No Recibo/ No. Aviso</th>
-			<th>Monto x Cuota</th>
-			<th>Estado</th>
+        			<th>Id Usuario</th>
+        			<th>Fecha Pago</th>
+        			<th>Cuotas A Pagar</th>
+        			<th>Cuotas Pagadas</th>
+        			<th>No Recibo/ No. Aviso</th>
+        			<th>Monto x Cuota</th>
+        			<th>Estado</th>
                     <th width="50px">Action</th>
                     </thead>
                     <tbody>

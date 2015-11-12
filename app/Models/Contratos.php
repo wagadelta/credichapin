@@ -64,11 +64,11 @@ class Contratos extends Model
 	}
 	
 	public function cobros(){
-		return $this->hasMany('App\Models\Cobros', 'id_contrato');
+		return $this->hasMany('App\Models\Cobros');
 	}
 	
 	public function referencias(){
-		return $this->hasMany('App\Models\Personas', 'id_contrato');
+		return $this->belongsTo('App\Models\Personas', 'id_contrato');
 	}
 
 }

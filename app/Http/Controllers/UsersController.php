@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Libraries\Repositories\RolesRepository;
 use App\Libraries\Repositories\UsersRepository;
 use Mitul\Controller\AppBaseController;
+use Carbon\Carbon;
 use Response;
 use Flash;
 
@@ -176,5 +177,31 @@ class UsersController extends AppBaseController
 
 		return redirect(route('users.index'));
 	}
+	
+	public function cobros($idUser, $fechaPago = null){
+
+		//\DB::enableQueryLog();
+		$fechaPago = (is_null($fechaPago)) ? Carbon::today()->toDateString() : Carbon::createFromFormat('Y-m-d',$fechaPago)->toDateString();
+
+		$dateFrom 	= $fechaPago." 00:00:00" ;
+		$dateTo 	= $fechaPago." 23:59:59" ;
+		//dd(array($dateFrom,$dateTo));
+		
+		$cobros = \App\Models\Cobros::where('id_usuario', '=', $idUser)
+		//->where('fecha_pago','=',$fechaPago)
+		->whereBetween('fecha_pago', array($dateFrom,$dateTo))
+		->get();
+		// foreach($cobros as $cobro){
+		// 	echo "<br>".$cobro->fecha_pago;
+		// 	echo "<br>".$cobro->cuotas_a_pagar;
+		// 	echo "<br>".$cobro->cuotas_pagadas;
+		// 	$cobro->contrato();
+		//var_dump($cobros);		dd(\DB::getQueryLog());
+		// }
+		return view('users.cobros')
+		->with('cobros', $cobros)
+		->with('fechaPago', $fechaPago);
+	}
 
 }
+

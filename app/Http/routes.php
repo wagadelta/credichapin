@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
     
     
     Route::resource('users', 'UsersController');
+    Route::get('users/{id}/cobros/fecha_pago/{fechaPago?}', 'UsersController@cobros');
     Route::get('users/{id}/delete', [
         'as' => 'users.delete',
         'uses' => 'UsersController@destroy',

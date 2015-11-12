@@ -39,5 +39,5 @@ class Cobros extends Model
 	public function contrato(){
 		return $this->belongsTo('App\Models\Contratos');
 	}
-
+	
 }

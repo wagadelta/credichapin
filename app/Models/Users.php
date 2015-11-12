@@ -71,4 +71,5 @@ class Users extends Model
 	public function cobros(){
 		return $this->hasMany('App\Models\Cobros');
 	}
+	
 }
