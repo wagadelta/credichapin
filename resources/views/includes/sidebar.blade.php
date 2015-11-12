@@ -67,13 +67,17 @@
                 </ul>
                 
             </li>
-            
-            <li>
-                <a href="/cobros">
-                    <i class="fa fa-money"></i>
-                    <span>Admin. Cobros</span>
+            <li class="treeview">
+                <a href="#">
+                     <i class="fa fa-money"></i> <span>Admin. Cobros</span> </i>
                 </a>
-            </li>
+                <ul class="treeview-menu">
+                    <li><a href="/cobros"><i class="fa fa-money"></i><span>Todos</span></a></li>
+                </ul>
+                <ul class="treeview-menu">
+                    <li><a href="/users/2/cobros/fecha_pago/2015-11-10"><i class="fa fa-money"></i><span>xFecha x Usuario</span></a></li>
+                </ul>
+            </li>            
             <li>
                 <a href="/dispositivos">
                     <i class="fa fa-mobile"></i>

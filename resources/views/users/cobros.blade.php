@@ -14,6 +14,30 @@
             @if (!count($cobros) )
                 <div class="well text-center">No Cobros found.</div>
             @else
+            <table class="table" border=1>
+                    <thead>
+                        <th>Usuario:</th>
+                        <th>Fecha:</th>
+                        <th>Acción</th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <select class="form-control" name="estado">
+                                <option value="1">Usuario 1</option>
+                                <option value="2">Usuario 2</option>
+                                <option value="3">Usuario 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="date" name="bday">
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="/cobros">Consultar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
                 <table class="table">
                     <thead>
                         <th>Id Contrato</th>
