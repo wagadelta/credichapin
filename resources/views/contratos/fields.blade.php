@@ -16,10 +16,10 @@
     {!! Form::text('valor_cuota', null, ['class' => 'form-control']) !!}
 </div>
 
-<!--- Perido Cobro Field --->
+<!--- periodo Cobro Field --->
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('perido_cobro', 'Perido Cobro:') !!}
-    {!! Form::text('perido_cobro', null, ['class' => 'form-control']) !!}
+    {!! Form::label('periodo_cobro', 'periodo Cobro:') !!}
+    {!! Form::text('periodo_cobro', null, ['class' => 'form-control']) !!}
 </div>
 
 <!--- Solicitado Por Field --->
@@ -180,8 +180,9 @@
 
 <!--- Estado Field --->
 <div class="form-group col-sm-6 col-lg-4">
-    {!! Form::label('estado', 'Estado:') !!}
-    {!! Form::text('estado', null, ['class' => 'form-control']) !!}
+    {!! Form::label('estados', 'Estado:') !!}
+    <!--{!! Form::text('estado', null, ['class' => 'form-control']) !!}-->
+    {!! Form::select('estado', $estados_option, Input::old('estado'), ['class' => 'form-control']) !!}
 </div>
 
 

@@ -107,7 +107,10 @@ class ContratosController extends AppBaseController
 			return redirect(route('contratos.index'));
 		}
 
-		return view('contratos.edit')->with('contratos', $contratos);
+		$estados_option=array('solicitado', 'aprobado', 'rechazado', 'entregado', 'pagado', 'juridico' );
+		return view('contratos.edit')
+		->with('contratos', $contratos)
+		->with('estados_option', $estados_option);
 	}
 
 	/**
@@ -162,7 +165,7 @@ class ContratosController extends AppBaseController
 	public function estado($estado, Request $request)
 	{
 
-		$contratos= \DB::table('contratos')->where('estado','=', $estado)->paginate(25);
+		$contratos= \DB::table('contratos')->where('estado','=', $estado)->orderBy('solicitado_en', 'desc')->paginate(25);
 		$contratos->setPath($request->url());
 		return view('contratos.index')
 		    ->with('contratos', $contratos)
