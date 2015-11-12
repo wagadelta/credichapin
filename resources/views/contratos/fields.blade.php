@@ -182,7 +182,15 @@
 <div class="form-group col-sm-6 col-lg-4">
     {!! Form::label('estados', 'Estado:') !!}
     <!--{!! Form::text('estado', null, ['class' => 'form-control']) !!}-->
-    {!! Form::select('estado', $estados_option, Input::old('estado'), ['class' => 'form-control']) !!}
+    <!--{!! Form::select('estado', $estados_option, Input::old('estado'), ['class' => 'form-control']) !!}-->
+    <select class="form-control" name="estado">
+        <option value="solicitado">solicitado</option>
+        <option value="aprobado">aprobado</option>
+        <option value="rechazado">rechazado</option>
+        <option value="entregado">entregado</option>
+        <option value="pagado">pagado</option>
+        <option value="juridico">juridico</option>
+    </select>
 </div>
 
 

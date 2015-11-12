@@ -15,7 +15,7 @@ class Contratos extends Model
 	    "monto",
 		"no_cuotas",
 		"valor_cuota",
-		"perido_cobro",
+		"periodo_cobro",
 		"solicitado_por",
 		"solicitado_en",
 		"aprobado_por",
