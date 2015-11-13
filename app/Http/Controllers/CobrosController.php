@@ -34,7 +34,7 @@ class CobrosController extends AppBaseController
 		//$result = $this->cobrosRepository->search($input);
 
 		//$cobros = $result[0];
-		$cobros = \DB::table('cobros')->paginate(25);
+		$cobros = \DB::table('cobros')->orderBy('fecha_pago', 'desc')->paginate(25);
 
 		//$attributes = $result[1];
 		$cobros->setPath($request->url());

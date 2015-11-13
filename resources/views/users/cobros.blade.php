@@ -56,21 +56,50 @@
                     <tbody>
                      <?php $total_pagado = 0 ;?>
                     @foreach($cobros as $cobro)
-                    <?php  //dd($cobro);?>
+                    <?php  $imprimeCuota = true;?>
                     <tr>
                         <td>{!! $cobro->fecha_pago !!}</td>
                         <td><a href='/contratos/{!! $cobro->id_contrato !!}'>{!! $cobro->id_contrato !!}</a></td>
     					<td>{!! $cobro->id_usuario !!}</td>
     					<td><?php
-    					        echo ($cobro->no_recibo==0)? ' <i class="fa fa-exclamation-triangle"></i> AVISO ' : $cobro->no_recibo;
+    					        if ($cobro->no_recibo==0){
+    					                echo ' <i class="fa fa-exclamation-triangle"></i> AVISO ';
+    					                $imprimeCuota = false;
+    					            }else
+    					            { 
+    					                echo $cobro->no_recibo;
+    					            }
     					    ?>
     					</td>
     					<?php //dd($cobro->contrato());?>
     					<td align="right">
-    					    <strong><?php echo 'Q.'. number_format( $cobro->contrato->valor_cuota, 2, '.', ','); ?></strong>
+    					    <strong>
+    					    <?php 
+    					    if($imprimeCuota) 
+    					    {
+    					        echo 'Q.'. number_format( $cobro->contrato->valor_cuota, 2, '.', ','); 
+    					    }else{
+    					        echo 'Q. 0.00'; 
+    					    }
+    					            
+    					     ?>
+    					    </strong>
     					</td>
                     </tr>
-                        <?php $total_pagado = $total_pagado + $cobro->contrato->valor_cuota ;?>
+                        
+                        
+                       
+                        <?php 
+    					    if($imprimeCuota) 
+    					    {
+    					         $total_pagado = $total_pagado + $cobro->contrato->valor_cuota ;
+    					        
+    					    }
+    					    
+    					     ?>
+                        
+                        
+                        
                     @endforeach
                     <tr>
                     <td></td>
