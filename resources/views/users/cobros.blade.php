@@ -56,7 +56,7 @@
                     <tbody>
                      <?php $total_pagado = 0 ;?>
                     @foreach($cobros as $cobro)
-                    <?php // dd($cobro);?>
+                    <?php  //dd($cobro);?>
                     <tr>
                         <td>{!! $cobro->fecha_pago !!}</td>
                         <td><a href='/contratos/{!! $cobro->id_contrato !!}'>{!! $cobro->id_contrato !!}</a></td>
@@ -66,7 +66,7 @@
     					    ?>
     					</td>
     					<?php //dd($cobro->contrato());?>
-    					<td>valor x cuota $$</td>
+    					<td>{!! $cobro->contrato->valor_cuota !!}</td>
                     </tr>
                         <?php $total_pagado = $total_pagado + $cobro->cuotas_pagadas ;?>
                     @endforeach

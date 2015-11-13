@@ -189,10 +189,17 @@ class UsersController extends AppBaseController
 		$dateTo 	= $fechaPago." 23:59:59" ;
 		//dd(array($dateFrom,$dateTo));
 		
-		$cobros = \App\Models\Cobros::where('id_usuario', '=', $idUser)
-		//->where('fecha_pago','=',$fechaPago)
+		// $cobros = \App\Models\Cobros::where('id_usuario', '=', $idUser)
+		// ->whereBetween('fecha_pago', array($dateFrom,$dateTo))
+		// ->get();
+		
+		$cobros = \App\Models\Cobros::with('contrato')
+		->where('id_usuario', '=', $idUser)
 		->whereBetween('fecha_pago', array($dateFrom,$dateTo))
 		->get();
+		
+		//dd($cobros);
+		
 		// foreach($cobros as $cobro){
 		// 	echo "<br>".$cobro->fecha_pago;
 		// 	echo "<br>".$cobro->cuotas_a_pagar;

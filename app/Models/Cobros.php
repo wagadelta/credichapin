@@ -37,7 +37,7 @@ class Cobros extends Model
 	// }
 	
 	public function contrato(){
-		return $this->belongsTo('App\Models\Contratos');
+		return $this->belongsTo('App\Models\Contratos', 'id_contrato');
 	}
 	
 }
