@@ -45,7 +45,7 @@
             @if (!count($cobros) )
                 <div class="well text-center">No Hay cobros para este dia.</div>
             @else
-            <table class="table">
+            <table class="table table-striped">
                     <thead>
                         <th>Fecha Pago</th>
                         <th>Id Contrato</th>
@@ -66,16 +66,22 @@
     					    ?>
     					</td>
     					<?php //dd($cobro->contrato());?>
-    					<td>Q.{!! $cobro->contrato->valor_cuota !!}</td>
+    					<td align="right">
+    					    <strong><?php echo 'Q.'. number_format( $cobro->contrato->valor_cuota, 2, '.', ','); ?></strong>
+    					</td>
                     </tr>
                         <?php $total_pagado = $total_pagado + $cobro->contrato->valor_cuota ;?>
                     @endforeach
                     <tr>
                     <td></td>
 					<td></td>
-					<td></td>
-					<td><h2>Total cobrado:</h2>
-					<div class="btn btn-lg btn-warning"><?php echo 'Q.'.$total_pagado; ?> <span class="glyphicon glyphicon-stats"></span></div></td>
+
+					<td colspan="3" align="right"><h2>Total cobrado:</h2>
+					<div class="btn btn-lg btn-warning">
+					    <h3>
+					        <?php echo 'Q. '. number_format( $total_pagado, 2, '.', ','); ?> &nbsp;&nbsp; <i class="fa fa-money"></i>
+					    </h3>
+					</div></td>
 					<td></td>
 					<td></td>
 					<td></td>
