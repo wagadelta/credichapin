@@ -81,6 +81,7 @@ class ContratosController extends AppBaseController
 	public function show($id)
 	{
 		$contratos = $this->contratosRepository->findContratosById($id);
+		$estados_option=array('solicitado', 'aprobado', 'rechazado', 'entregado', 'pagado', 'juridico' );
 
 		if(empty($contratos))
 		{
@@ -88,7 +89,10 @@ class ContratosController extends AppBaseController
 			return redirect(route('contratos.index'));
 		}
 
-		return view('contratos.show')->with('contratos', $contratos);
+		return view('contratos.show')
+		->with('estados_option', $estados_option)
+		->with('contratos', $contratos)
+		->with('idContrato', $id);
 	}
 
 	/**

@@ -8,7 +8,7 @@
 				<div class="panel-heading">Bienvenido</div>
 
 				<div class="panel-body">
-					Elija una opción.
+					Elija una opción. 
 				</div>
 			</div>
 		</div>

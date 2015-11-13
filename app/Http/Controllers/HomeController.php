@@ -1,5 +1,6 @@
 <?php 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 class HomeController extends Controller {
 
@@ -31,7 +32,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		$todayDate = Carbon::today()->toDateString();
+		session(['dateToday' => $todayDate]);
 		return view('home');
+		//->with('todayDate', $todayDate)
 	}
 
 }

@@ -32,7 +32,7 @@
                      
                     @foreach($cobros as $cobro)
                         <tr>
-                    <td>{!! $cobro->id_contrato !!}</td>
+                    <td><a href='/contratos/{!! $cobro->id_contrato !!}'>{!! $cobro->id_contrato !!}</a></td>
 					<td>{!! $cobro->id_usuario !!}</td>
 					<td>{!! $cobro->fecha_pago !!}</td>
 					<td>{!! $cobro->cuotas_a_pagar !!}</td>

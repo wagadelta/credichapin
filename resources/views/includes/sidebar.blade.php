@@ -75,7 +75,7 @@
                     <li><a href="/cobros"><i class="fa fa-money"></i><span>Todos</span></a></li>
                 </ul>
                 <ul class="treeview-menu">
-                    <li><a href="/users/2/cobros/fecha_pago/2015-11-10"><i class="fa fa-money"></i><span>xFecha x Usuario</span></a></li>
+                    <li><a href="/users/2/cobros/fecha_pago/{!! session()->get('dateToday') !!}"><i class="fa fa-money"></i><span>xFecha x Usuario </span></a></li>
                 </ul>
             </li>            
             <li>

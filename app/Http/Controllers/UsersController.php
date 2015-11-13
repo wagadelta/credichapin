@@ -98,7 +98,9 @@ class UsersController extends AppBaseController
 			return redirect(route('users.index'));
 		}
 
-		return view('users.show')->with('Users', $Users);
+		return view('users.show')
+		->with('userdata', $Users)
+		->with('userId'. $id);
 	}
 
 	/**
@@ -200,7 +202,8 @@ class UsersController extends AppBaseController
 		// }
 		return view('users.cobros')
 		->with('cobros', $cobros)
-		->with('fechaPago', $fechaPago);
+		->with('fechaPago', $fechaPago)
+		->with('idUser', $idUser);
 	}
 
 }
