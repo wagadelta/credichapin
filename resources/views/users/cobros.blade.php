@@ -66,16 +66,16 @@
     					    ?>
     					</td>
     					<?php //dd($cobro->contrato());?>
-    					<td>{!! $cobro->contrato->valor_cuota !!}</td>
+    					<td>Q.{!! $cobro->contrato->valor_cuota !!}</td>
                     </tr>
-                        <?php $total_pagado = $total_pagado + $cobro->cuotas_pagadas ;?>
+                        <?php $total_pagado = $total_pagado + $cobro->contrato->valor_cuota ;?>
                     @endforeach
                     <tr>
                     <td></td>
 					<td></td>
 					<td></td>
-					<td>Total cuotas cobrado:</td>
-					<td><?php echo $total_pagado; ?></td>
+					<td><h2>Total cobrado:</h2>
+					<div class="btn btn-lg btn-warning"><?php echo 'Q.'.$total_pagado; ?> <span class="glyphicon glyphicon-stats"></span></div></td>
 					<td></td>
 					<td></td>
 					<td></td>
