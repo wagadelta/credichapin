@@ -24,18 +24,18 @@ public function run()
 	    ],
 	    [
       'id_supervisor' => 0,
-      'identificacion' => '4654656',
+      'identificacion' => '2546091390203',
     		'otra_identificacion' => '',
-    		'email' => 'jervin@gmail.com',
-    		'nombres' => 'jervin',
-    		'apellidos' => 'arreaga',
-    		'telefonos' => '32155985',
+    		'email' => 'axelsarceno.delta@gmail.com',
+    		'nombres' => 'Axel',
+    		'apellidos' => 'Sarceño',
+    		'telefonos' => '41155679',
     		'foto' => '',
-    		'correlativo_recibo_cobro' => '4',
-    		'correlativo_recibo_entrega' => '4',
-    		'usuario' => 'superjervin',
-    		'password' => Hash::make('jervinpass'),
-    		'id_rol' => 2,  //supervisor
+    		'correlativo_recibo_cobro' => '',
+    		'correlativo_recibo_entrega' => '',
+    		'usuario' => 'admin-axel',
+    		'password' => Hash::make('123456'),
+    		'id_rol' => 1,  //administrador
 	    ],
 	    [
       'id_supervisor' => 2,
