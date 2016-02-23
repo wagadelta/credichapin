@@ -27,7 +27,10 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$compiledPath = __DIR__.'/../storage/framework/compiled.php';
+// migrate to laravel 5.1 
+
+//$compiledPath = __DIR__.'/../storage/framework/compiled.php';
+$compilePath = __DIR__.'/cache/compiled.php';
 
 if (file_exists($compiledPath))
 {
